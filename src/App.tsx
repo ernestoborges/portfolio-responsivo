@@ -6,6 +6,8 @@ import './App.css'
 
 function App() {
 
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
   const projects = [
     {
       title: "Pokedex",
@@ -64,6 +66,24 @@ function App() {
               <li><a href="#contact">contato</a></li>
             </ul>
           </nav>
+          <div className="burger-button-container">
+            <input type="checkbox" onChange={(event) => setIsBurgerMenuOpen(event.target.checked)} />
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className="burger-menu-content-container" style={isBurgerMenuOpen ? { height: "6rem" } : { height: 0 }} >
+            <nav>
+              <ul>
+                <li><a href="#home">inicio</a></li>
+                <li><a href="#main">sobre</a></li>
+                <li><a href="#projects">projetos</a></li>
+                <li><a href="#contact">contato</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
       <main>
