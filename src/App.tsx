@@ -54,19 +54,21 @@ function App() {
   return (
     <div className="App">
       <header className='page-header'>
-        <div className='logo-container'>&#60;webdev&#47;&#62;</div>
-        <nav>
-          <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>projects</li>
-            <li>contact</li>
-          </ul>
-        </nav>
+        <div className="header-wrapper">
+          <div className='logo-container'>&#60;webdev&#47;&#62;</div>
+          <nav>
+            <ul>
+              <li><a href="#home">inicio</a></li>
+              <li><a href="#main">sobre</a></li>
+              <li><a href="#projects">projetos</a></li>
+              <li><a href="#contact">contato</a></li>
+            </ul>
+          </nav>
+        </div>
       </header>
       <main>
         {/* home */}
-        <section className='home-section'>
+        <section id="home" className='home-section'>
           <article className='home-article'>
             <header>
               <h1>Olá,<br />meu nome é <span>Ernesto</span> <span>Borges</span></h1>
@@ -79,7 +81,7 @@ function App() {
           </article>
         </section>
         {/* about */}
-        <section className='main-section'>
+        <section id="main" className='main-section'>
           <article className='main-section-article'>
             <header>
               <h2>Sobre mim</h2>
@@ -87,20 +89,30 @@ function App() {
             <section>
               <p>
                 <span>&#62;</span>
-                <span>Meu nome é Ernesto Tavares, sou um desenvolvedor front-end que ... . Estou em processo de mudança de carreira buscando minha primeira experiência profissional.</span>
+                <span>Olá, meu nome é Ernesto Borges e sou desenvolvedor front-end. Comecei a estudar desenvolvimento web no início de 2022 e estou em busca de minha primeira oportunidade profissional.</span>
+              </p>
+              <br />
+              <p>
+                <span>&#62;</span>
+                <span>Hoje, tenho bastante autonomia em HTML, CSS e JavaScript e isso consequentemente me garante uma facilidade em aprender novas tecnologias. Atualmente estou me especializando em ReactJS e ficando cada vez mais apaixonado em seu ecossistema.</span>
+              </p>
+              <br />
+              <p>
+                <span>&#62;</span>
+                <span>Recentemente, comecei a incorporar TypeScript em meus projetos, pois reconheco sua importância e utilidade. Embora minha especialização seja em front-end, também tenho conhecimento básico em backend principalmente criando APIs RESTful utilizando NodeJS com Express conectando a bancos como Mongodb e PostgreSQL.</span>
               </p>
             </section>
             <section>
               <h3>Habilidades</h3>
               <p>
                 <span>&#62;</span>
-                <span>HTML, CSS, Bootstrap, JavaScript, React, Typescript, Node, MongoDB.</span>
+                <span>HTML, CSS, Bootstrap, JavaScript, ReactJS, Typescript, NodeJS, MongoDB, PostgreeSQL.</span>
               </p>
             </section>
           </article>
         </section>
         {/* projects */}
-        <section className='main-section projects-section'>
+        <section id="projects" className='main-section projects-section'>
           <article className='main-section-article'>
             <header>
               <h2>Projetos</h2>
@@ -108,7 +120,7 @@ function App() {
             <section className='projects-gallery'>
               {
                 projects.map((project, index) => (
-                  <div className='project-wrapper'>
+                  <div key={index} className='project-wrapper'>
                     <div className='border-gap border-top'></div>
                     <div className='border-gap border-right'></div>
                     <div className='border-gap border-bottom'></div>
@@ -140,7 +152,7 @@ function App() {
           </article>
         </section>
         {/* contact */}
-        <section className='main-section contact-section'>
+        <section id="contact" className='main-section contact-section'>
           <article className='main-section-article'>
             <header>
               <h2>Contato</h2>
@@ -148,11 +160,15 @@ function App() {
             <section>
               <a href='https://www.linkedin.com/in/ernesto-borges-b9a440194/' title="Linkedin" target="_blank">
                 <IoLogoLinkedin />
+                <p>Linkedin</p>
               </a>
               <a href='https://github.com/ernestoborges' title="Github" target="_blank">
-                <IoLogoGithub /></a>
+                <IoLogoGithub />
+                <p>Github</p>
+              </a>
               <a href='mailto:ernestoborges1995@gmail.com' title="E-mail" target="_blank">
                 <IoIosMail />
+                <p>Email</p>
               </a>
             </section>
           </article>
